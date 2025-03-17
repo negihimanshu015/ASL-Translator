@@ -1,5 +1,6 @@
 import cv2 as cv
 import mediapipe as mp
+import numpy as np
 
 capture = cv.VideoCapture(0)
 
@@ -15,6 +16,11 @@ while True:
     if results.multi_hand_landmarks:
         for landmarks in results.multi_hand_landmarks:
             mp_drawing.draw_landmarks(frame, landmarks, mpHands.HAND_CONNECTIONS)
+
+            landmks = []
+            for landmark in landmarks.landmark:
+                landmks.append([landmark.x, landmark.y, landmark.z])
+            print(np.array(landmarks))
 
     cv.imshow("frame",cv.flip(frame, 1))
 
