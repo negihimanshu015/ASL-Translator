@@ -8,7 +8,7 @@ mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.7)
 
-dataset_path = os.path.join("Dataset", "asl_alphabet_train")
+dataset_path = os.path.join("dataset", "asl_alphabet_train")
 output_csv = "hand_landmarks.csv"
 
 if not os.path.exists(output_csv):
@@ -46,6 +46,6 @@ for letter in sorted(os.listdir(dataset_path)):
                         writer = csv.writer(f)
                         writer.writerow([letter.upper()] + landmarks)
 
-        print(f"✅ {letter}: Processed {len(image_files)} images.")
+        print(f" {letter}: Processed {len(image_files)} images.")
 
-print("🎉 Landmark extraction complete! Data saved to hand_landmarks.csv")
+
