@@ -9,7 +9,7 @@ mp_drawing = mp.solutions.drawing_utils
 hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.7)
 
 dataset_path = os.path.join("dataset", "asl_alphabet_train")
-output_csv = "hand_landmarks.csv"
+output_csv = "Data/raw/hand_landmarks.csv"
 
 if not os.path.exists(output_csv):
     with open(output_csv, "w", newline="") as f:

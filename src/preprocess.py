@@ -32,14 +32,15 @@ def preprocess_data(file_path, augment_data=False):
         print(" Data augmentation applied")
     
    
-    joblib.dump(scaler, "scaler.pkl")
-    np.save("X_train.npy", X_train)
-    np.save("X_test.npy", X_test)
-    np.save("y_train.npy", y_train)
-    np.save("y_test.npy", y_test)    
+    joblib.dump(scaler, "models\\scaler.pkl")
+    np.save("Data/Processed/X_train.npy", X_train)
+    np.save("Data/Processed/X_test.npy", X_test)
+    np.save("Data/Processed/y_train.npy", y_train)
+    np.save("Data/Processed/y_test.npy", y_test)    
+    
     
     return X_train, X_test, y_train, y_test
 
 if __name__ == "__main__":
-    file_path = "hand_landmarks.csv" 
+    file_path = "Data\\raw\\hand_landmarks.csv" 
     preprocess_data(file_path, augment_data=True)

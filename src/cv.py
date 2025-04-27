@@ -3,8 +3,8 @@ import mediapipe as mp
 import numpy as np
 import joblib
 
-svm_model = joblib.load("sign_language_svm.pkl") 
-scaler = joblib.load("scaler.pkl")
+svm_model = joblib.load("models\\sign_language_svm.pkl") 
+scaler = joblib.load("models\\scaler.pkl")
 
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
